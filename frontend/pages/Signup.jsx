@@ -1,4 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import { Heading } from "../components/Heading";
+import { SubHeading } from "../components/SubHeading";  
+import { InputBox } from "../components/InputBox";
+import { Button } from "../components/Button";
+import { BottomWarning } from "../components/BottomWarning";
+import { Dashboard }from "./Dashboard";
+
 
 export const Signup=()=>{
     const [firstName,setFirstName]=useState("");
@@ -9,9 +18,9 @@ export const Signup=()=>{
 
     return <div className="bg-slate-300 h-screen flex justify-center">
         <div claasName="flex flex-col justify-center">
-            <div className="rounded-lg bg-white w-80 text center p-2 h-max px-4">
+            <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
                 <Heading label={"Sign up"}></Heading>
-                <Subheading label={"Enter your information to create the account"}></Subheading>
+                <SubHeading label={"Enter your information to create the account"}></SubHeading>
                 <InputBox onChange={e=>{
                     setFirstName(e.target.value);
                 }} placeholder="Kishan" label={"First Name"}></InputBox>
@@ -36,7 +45,7 @@ export const Signup=()=>{
                         navigate("/dashboard")
                     }} label={"Sign up"}></Button>
                 </div>
-                 <BottomWarning label={"Already have an account"} buttonText={"Sign in"} to ={"/Singin"}></BottomWarning>
+                 <BottomWarning label={"Already have an account"} buttonText={"Sign in"} to ={"/signin"}></BottomWarning>
             </div>
 
         </div>
